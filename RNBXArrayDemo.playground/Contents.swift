@@ -146,3 +146,21 @@ for i in stride(from: 1.0, to: 5.0, by: 1.0){
 for i in stride(from: 1.0, through: 5.0, by: 1.0){
     print(i)
 }
+
+
+let array:[UInt8] = [0x01, 0x02, 0x03, 0x04, 0x05, 0x06]
+let data = Data(bytes: array)
+
+3...4
+3..<4
+3.0 ... 4.0
+3.0 ..< 4.0
+
+
+data.subdata(in: 3..<4).forEach{ print("a \($0)") }
+data.subdata(in: 3..<3).forEach{ print("b \($0)") }
+data.subdata(in: 3..<4).forEach{ print("c \($0)") }
+
+data[3...4].forEach{ print("A \($0)") }
+data[3..<3].forEach{ print("B \($0)") }
+data[3..<4].forEach{ print("C \($0)") }
